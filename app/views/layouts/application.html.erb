@@ -2,13 +2,16 @@
 <html>
   <head>
     <title>Yelpdemo</title>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
     <%= csrf_meta_tags %>
-
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= render 'layouts/bootstrap' %>
   </head>
 
   <body>
-    <%= yield %>
+  <%= csrf_meta_tags %>
+	<%= render 'layouts/navbar' %>
+	<%= yield %>
+	<%= render 'layouts/footer' %> 
   </body>
 </html>
